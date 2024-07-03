@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :roles
+  resources :posts do
+    resources :comments, only: %i[create index]
+  end
 end
